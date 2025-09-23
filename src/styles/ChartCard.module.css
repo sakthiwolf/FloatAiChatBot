@@ -1,0 +1,21 @@
+.chartCard {
+    background: #0d2b52;
+    border-radius: 16px;
+    padding: 16px;
+    margin-top: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    color: #fff;
+    width: 320px;
+  }
+  .chartHeader {
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+  }
+  .chartHeader::before {
+    content: "📅";
+    margin-right: 6px;
+  }
+  
