@@ -10,11 +10,14 @@ import ProtectedRoute from "./routes/ProtectedRoute";
 function App() {
   return (
     <Routes>
+      {/* Main Layout Routes */}
       <Route path="/" element={<MainLayout />}>
         <Route index element={<LandingPage />} />
         <Route path="login" element={<LoginPage />} />
         <Route path="about" element={<AboutPage />} />
       </Route>
+
+      {/* Chat Route (Protected) */}
       <Route
         path="chat"
         element={

@@ -3,19 +3,15 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "leaflet.heat";
 
-export default function MapCard() {
+export default function MapCard({ data }) {
   useEffect(() => {
     const map = L.map("map").setView([0, 0], 2);
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(map);
 
-    const heatData = [
-      [0, 0, 0.5],
-      [20, 77, 0.8],
-      [-10, -50, 0.7],
-      [40, 10, 0.6]
-    ];
-    L.heatLayer(heatData, { radius: 25, blur: 15, maxZoom: 6 }).addTo(map);
-  }, []);
+    if (data && data.length) {
+      L.heatLayer(data, { radius: 25, blur: 15, maxZoom: 6 }).addTo(map);
+    }
+  }, [data]);
 
   return (
     <div className="bot-message">

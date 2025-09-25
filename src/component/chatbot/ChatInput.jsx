@@ -1,12 +1,12 @@
 import { useState } from "react";
 import styles from "../../styles/ChatInput.module.css";
 
-export default function ChatInput({ setMessages }) {
+export default function ChatInput({ onSend }) {
   const [input, setInput] = useState("");
 
   const handleSend = () => {
     if (!input.trim()) return;
-    setMessages((prev) => [...prev, { type: "user", text: input }]);
+    onSend(input);
     setInput("");
   };
 
