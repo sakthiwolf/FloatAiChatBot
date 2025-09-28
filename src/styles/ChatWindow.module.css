@@ -1,0 +1,50 @@
+.chatWindow {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #000; /* since you use dark theme */
+  height: 100%;
+  overflow-y: auto;
+}
+
+/* User messages */
+.userMsg {
+  align-self: flex-end;
+  background: #4a90e2;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 18px 18px 0 18px;
+  max-width: 70%;
+  font-size: 14px;
+  white-space: pre-line;
+}
+
+/* Bot message container */
+.botMsg {
+  align-self: flex-start;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  max-width: 80%;
+  background: #1f1f1f;
+  padding: 10px 14px;
+  border-radius: 18px 18px 18px 0;
+  font-size: 14px;
+  color: #f1f1f1;
+  white-space: pre-line;
+}
+
+/* Bot logo */
+.botLogo {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #4a90e2;
+  padding: 3px;
+  object-fit: cover;
+}
+
+.botText {
+  flex: 1;
+}

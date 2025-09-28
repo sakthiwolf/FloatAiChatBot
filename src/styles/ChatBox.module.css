@@ -4,6 +4,7 @@
     overflow-y: auto;
     display: flex;
     flex-direction: column;
+    background-color: #000001;
   }
   .userMessage {
     max-width: 75%;

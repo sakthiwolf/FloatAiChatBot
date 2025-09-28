@@ -1,0 +1,27 @@
+.dashboard {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 15px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.card {
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.infoBox {
+  grid-column: span 2;
+  background: #e6f7f1;
+  border-left: 5px solid #2ecc71;
+  padding: 15px;
+  border-radius: 8px;
+}

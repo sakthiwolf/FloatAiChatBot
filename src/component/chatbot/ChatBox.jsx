@@ -1,6 +1,6 @@
 import styles from "../../styles/ChatBox.module.css";
 import ChartCard from "./ChartCard";
-import MapCard from "./MapCard";
+
 
 export default function ChatBox({ messages }) {
   return (
@@ -8,6 +8,7 @@ export default function ChatBox({ messages }) {
       {messages.map((msg, i) => {
         if (msg.type === "chart") return <ChartCard key={i} {...msg.data} />;
         if (msg.type === "map") return <MapCard key={i} />;
+        if (msg.type === "dashboard") return <DashboardCard key={i} {...msg.data} />;
         return (
           <div
             key={i}
