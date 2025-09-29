@@ -3,7 +3,7 @@ import { useAuth } from "../../pages/auth/AuthContext";
 import { useNavigate } from "react-router-dom";
 import logo from "../../assets/logochat.png";
 
-export default function Sidebar() {
+export default function Sidebar({ isOpen, onClose }) {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
 
@@ -11,6 +11,10 @@ export default function Sidebar() {
     try {
       await logout();
       navigate("/login", { replace: true });
+      // Close sidebar on mobile after logout
+      if (onClose) {
+        onClose();
+      }
     } catch (error) {
       console.error("Failed to logout:", error);
     }
@@ -40,9 +44,15 @@ export default function Sidebar() {
   const avatarSrc = (user && user.photoURL) || getDefaultAvatar();
 
   return (
-    <aside className={styles.sidebar}>
-      {/* Logo */}
-      <div className={styles.brand}>
+    <>
+      <aside className={`${styles.sidebar} ${isOpen ? styles.open : ''}`}>
+        {/* Close button for mobile */}
+        <button className={styles.closeBtn} onClick={onClose} aria-label="Close sidebar">
+          ✕
+        </button>
+        
+        {/* Logo */}
+        <div className={styles.brand}>
         <img src={logo} alt="Ocean Logo" className={styles.logo} />
         <h1 className={styles.brandName}>Ocean Chat</h1>
       </div>
@@ -73,6 +83,7 @@ export default function Sidebar() {
       <button className={styles.logoutBtn} onClick={handleLogout}>
         Logout
       </button>
-    </aside>
+      </aside>
+    </>
   );
 }

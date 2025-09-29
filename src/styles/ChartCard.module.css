@@ -1,34 +1,56 @@
 .chartCard {
-    background: #0d2b52;
-    border-radius: 16px;
-    padding: 16px;
-    margin-top: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-    color: #fff;
-    width: 320px;
-  }
-  .chartHeader {
-    font-weight: bold;
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-  }
-  .chartHeader::before {
-    content: "";
-    margin-right: 6px;
-  }
-  .chartCard {
-  background: #fff;
+  background: #2a2a2a;
   border-radius: 12px;
   padding: 15px;
   margin: 10px 0;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  color: #fff;
+  width: 100%;
+  max-width: 400px;
 }
+
 .chartCard h3 {
   margin-bottom: 10px;
   font-size: 16px;
-  color: #333;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+  .chartCard {
+    max-width: 350px;
+    padding: 12px;
+  }
+  
+  .chartCard h3 {
+    font-size: 15px;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .chartCard {
+    max-width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+  }
+  
+  .chartCard h3 {
+    font-size: 14px;
+  }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+  .chartCard {
+    padding: 8px;
+    margin: 6px 0;
+  }
+  
+  .chartCard h3 {
+    font-size: 13px;
+  }
 }
 
   

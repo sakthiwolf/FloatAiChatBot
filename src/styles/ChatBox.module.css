@@ -1,11 +1,16 @@
 .chatBox {
-    flex: 1;
-    padding: 20px;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    background-color: #000001;
-  }
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: #1a1a1a;
+  min-height: 0;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
   .userMessage {
     max-width: 75%;
     padding: 12px 16px;
@@ -14,7 +19,10 @@
     background: #0078d7;
     color: #fff;
     align-self: flex-end;
+    word-wrap: break-word;
+    line-height: 1.4;
   }
+
   .botMessage {
     max-width: 75%;
     padding: 12px 16px;
@@ -23,5 +31,90 @@
     background: #2a2a2a;
     color: #e0e0e0;
     align-self: flex-start;
+    word-wrap: break-word;
+    line-height: 1.4;
   }
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+  .chatBox {
+    padding: 15px;
+  }
+  
+  .userMessage,
+  .botMessage {
+    max-width: 85%;
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .chatBox {
+    padding: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  
+  .userMessage,
+  .botMessage {
+    max-width: 90%;
+    padding: 8px 12px;
+    font-size: 13px;
+    margin: 6px 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+  .chatBox {
+    padding: 8px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  
+  .userMessage,
+  .botMessage {
+    max-width: 95%;
+    padding: 6px 10px;
+    font-size: 12px;
+    margin: 4px 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+}
+
+/* Extra small mobile styles */
+@media (max-width: 360px) {
+  .chatBox {
+    padding: 6px;
+  }
+  
+  .userMessage,
+  .botMessage {
+    max-width: 98%;
+    padding: 5px 8px;
+    font-size: 11px;
+    margin: 3px 0;
+  }
+}
+
+/* Landscape mobile adjustments */
+@media (max-width: 768px) and (orientation: landscape) {
+  .chatBox {
+    padding: 8px;
+  }
+  
+  .userMessage,
+  .botMessage {
+    padding: 6px 10px;
+    font-size: 12px;
+    margin: 4px 0;
+  }
+}
   

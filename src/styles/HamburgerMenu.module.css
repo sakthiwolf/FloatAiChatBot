@@ -1,0 +1,113 @@
+.hamburger {
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 40px;
+  height: 40px;
+  background: #ff0000;
+  border: 3px solid #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 1001;
+  position: relative;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.hamburger:hover {
+  transform: scale(1.05);
+  background: #ff3333;
+}
+
+.hamburger:active {
+  transform: scale(0.95);
+  background: #cc0000;
+}
+
+.hamburger.open {
+  background: #4CAF50;
+}
+
+.hamburger.open:hover {
+  background: #66bb6a;
+}
+
+/* Show hamburger only on mobile and tablet */
+@media (max-width: 1024px) {
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* Hide hamburger on desktop - sidebar is always visible */
+@media (min-width: 1025px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+.hamburger span {
+  width: 20px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+  display: block;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile specific adjustments */
+@media (max-width: 768px) {
+  .hamburger {
+    width: 36px;
+    height: 36px;
+    padding: 4px;
+  }
+  
+  .hamburger span {
+    width: 18px;
+    height: 2.5px;
+  }
+}
+
+/* Small mobile adjustments */
+@media (max-width: 480px) {
+  .hamburger {
+    width: 32px;
+    height: 32px;
+    padding: 3px;
+  }
+  
+  .hamburger span {
+    width: 16px;
+    height: 2px;
+  }
+}
+
+/* Extra small mobile adjustments */
+@media (max-width: 360px) {
+  .hamburger {
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+  }
+  
+  .hamburger span {
+    width: 14px;
+    height: 2px;
+  }
+}

@@ -1,9 +1,16 @@
 .chatInput {
-    display: flex;
-    padding: 12px;
-    border-top: 1px solid #2c2c2c;
-    background: #1e1e1e;
-  }
+  display: flex;
+  padding: 12px;
+  border-top: 1px solid #2c2c2c;
+  background: #1e1e1e;
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+  box-sizing: border-box;
+  width: 100%;
+  flex-shrink: 0;
+}
+
   .chatInput input {
     flex: 1;
     padding: 12px;
@@ -12,7 +19,18 @@
     background: #2a2a2a;
     color: #fff;
     outline: none;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
   }
+
+  .chatInput input:focus {
+    background: #333;
+  }
+
+  .chatInput input::placeholder {
+    color: #888;
+  }
+
   .chatInput button {
     margin-left: 10px;
     padding: 12px 18px;
@@ -21,8 +39,115 @@
     border-radius: 8px;
     color: #fff;
     cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+    min-width: 44px; /* Touch-friendly minimum size */
   }
+
   .chatInput button:hover {
     background: #005a9e;
   }
+
+  .chatInput button:active {
+    transform: scale(0.95);
+  }
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+  .chatInput {
+    padding: 10px;
+  }
+  
+  .chatInput input {
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  .chatInput button {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .chatInput {
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .chatInput input {
+    padding: 8px 10px;
+    font-size: 13px;
+    min-width: 0;
+    flex: 1;
+  }
+  
+  .chatInput button {
+    margin-left: 8px;
+    padding: 8px 14px;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+  .chatInput {
+    padding: 6px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .chatInput input {
+    padding: 6px 8px;
+    font-size: 12px;
+    min-width: 0;
+    flex: 1;
+  }
+  
+  .chatInput button {
+    margin-left: 6px;
+    padding: 6px 12px;
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+}
+
+/* Extra small mobile styles */
+@media (max-width: 360px) {
+  .chatInput {
+    padding: 4px;
+  }
+  
+  .chatInput input {
+    padding: 5px 6px;
+    font-size: 11px;
+  }
+  
+  .chatInput button {
+    margin-left: 4px;
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+}
+
+/* Landscape mobile adjustments */
+@media (max-width: 768px) and (orientation: landscape) {
+  .chatInput {
+    padding: 6px;
+  }
+  
+  .chatInput input {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+  
+  .chatInput button {
+    margin-left: 6px;
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
   

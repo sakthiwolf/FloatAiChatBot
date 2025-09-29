@@ -1,5 +1,7 @@
 import styles from "../../styles/ChatBox.module.css";
 import ChartCard from "./ChartCard";
+import MapCard from "./MapCard";
+import DashboardCard from "./DashboardCard";
 
 
 export default function ChatBox({ messages }) {
